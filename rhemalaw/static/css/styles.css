@@ -20,3 +20,16 @@
     background-color: #363636;
     color: #fff;
 }
+
+.theme--dark.v-app-bar.v-toolbar.v-sheet {
+    background-color: #000;
+}
+
+.w3-border-yellow {
+    border-color: #b2893d !important;
+}
+
+.w3-yellow {
+    background-color: #b2893d !important;
+
+}

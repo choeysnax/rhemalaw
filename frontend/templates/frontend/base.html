@@ -23,6 +23,11 @@
         }
 
         @font-face {
+            font-family: 'BodoniStd-Book';
+            src: url('{% static 'fonts/Bodoni/BodoniStd-Book.ttf' %}') format('truetype');
+        }
+
+        @font-face {
             font-family: 'MabryLightPro';
             src: url('{% static 'fonts/MabryLightPro/mabry-light-pro.ttf' %}') format('truetype');
         }
@@ -32,17 +37,23 @@
             src: url('{% static 'fonts/OrpheusPro/Canada-Type-Orpheus-Pro.otf' %}') format('truetype');
         }
 
+
         *, div, body, p {
-            font-family: "MabryLightPro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-        !important;
-            font-size: 16px;
+            font-family: "MabryLightPro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+            font-size: 18px;
         }
 
         h1, h2, h3, h4, h5, h6, strong, .is-bold, .w3-btn {
-            font-family: OrpheusPro, "CircularPro-Book", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-        !important;
+            font-family: OrpheusPro, "CircularPro-Book", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
         }
 
+        .bodoni {
+            font-family: "BodoniStd-Book", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+        }
+
+        .bgoverlay {
+            background: rgba(0, 0, 0, 0.4);
+        }
     </style>
     {% block extra_head %}
 
@@ -51,18 +62,28 @@
 <body style="width: 100%">
 
 <div id="app" class="w3-hide w3-animate-opacity trans-400">
-    <v-app-bar class="is-dark">
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"
-                            class="w3-hide-medium w3-hide-large w3-hide"></v-app-bar-nav-icon>
-        <a href="/">
-            <strong class="is-bold w3-xlarge">RhemaLaw</strong>
+    <div class="w3-bar w3-padding-24 w3-black w3-bottombar w3-border-yellow">
+        <a class="w3-bar-item" href="/">
+            <div class="level is-mobile">
+                <div class="level-item" style="margin-top: -5px">
+                    <img src="{% static 'images/rl.svg' %}" alt="" style="height: 40px">
+                </div>
+                <div class="level-item">
+                    <span class="w3-xlarge is-uppercase bodoni w3-text-white">Rhema Law</span>
+                </div>
+            </div>
         </a>
-        <v-spacer></v-spacer>
-        <div class="w3-hide-small">
+        <div w3-bar-item class="w3-right w3-xlarge w3-margin-right w3-hide-medium w3-hide-large">
 
+            <v-btn text icon dark @click="toggle">
+                <i class="fas fa-bars"></i>
+            </v-btn>
+        </div>
+        <div class="w3-bar-item w3-right w3-hide-small w3-animate-opacity" id="navigation">
             {% include 'frontend/partials/navigation.html' %}
         </div>
-    </v-app-bar>
+
+    </div>
     {% block content %}
     {% endblock %}
 
@@ -95,6 +116,9 @@
             goTo(url) {
                 window.location.href = url;
             },
+            toggle() {
+                $('#navigation').toggleClass('w3-hide-small')
+            }
         }
     });
 </script>
