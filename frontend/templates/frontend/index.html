@@ -1,0 +1,138 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block page_title %}
+    Welcome
+{% endblock %}
+{% block extra_head %}
+    <style>
+        .bgimg {
+            background-image: url('{% static 'images/girls.png'%}');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="hero is-large is-dark">
+        <div class="hero-body container">
+            <h1 class="w3-jumbo w3-padding-large w3-hide-small" style="font-weight: 600">
+                We're a versatile law firm for all you'll ever need
+            </h1>
+            <h1 class="w3-xxlarge w3-padding-large w3-hide-large w3-hide-medium" style="font-weight: 600">
+                We're a versatile law firm for all you'll ever need
+            </h1>
+        </div>
+    </div>
+    <div class="hero is-medium is-patel-yellow">
+        <div class="hero-body">
+            <div class="columns">
+                <div class="column is-offset-1 is-6 w3-padding">
+                    <h1 class="w3-xxxlarge w3-margin-bottom w3-hide-small" style="font-weight: 600">Advocating for
+                        Ghanaian businesses and entrepreneurs since 2003.</h1>
+                    <h1 class="w3-xxlarge w3-margin-bottom w3-hide-large w3-hide-medium" style="font-weight: 600">
+                        Advocating for
+                        Ghanaian businesses and entrepreneurs since 2003.</h1>
+                    <p class="w3-xlarge">
+                        Rhema Law is a law firm based in Accra, Ghana, which operates a niche corporate and commercial
+                        law practice that advises local, external and multinational companies. We combine creative
+                        solutions with pragmatism and a friendly, sensitive approach to support individuals and
+                        businesses to resolve conflict, safeguard their futures, and maximize opportunities.
+                    </p>
+                    <br>
+                    <a href="{% url 'frontend:about' %}" class="w3-btn w3-border w3-padding-large w3-xlarge is-dark">Learn
+                        more</a>
+                </div>
+                <div class="column is-4 is-offset-1 w3-padding">
+                    <h1 class="w3-xlarge">Contact us</h1>
+                    <p class="w3-xlarge">
+                        Ground Floor, Stanbic Heights
+                        <br>
+                        Plot 215 South Liberation Link,
+                        <br>
+                        Airport City
+                        <br>
+                        Accra, Ghana
+                        <br>
+                        <br>
+                        <a href="mailto:akuaa@rhemalawgh.com" class="w3-xlarge w3-border-bottom w3-border-white">akuaa@rhemalawgh.com</a>
+                        <br>
+                        +233 (0) 506 695 374
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero is-medium is-dark">
+        <div class="hero-body">
+            <div class="columns">
+                <div class="column is-offset-1 is-6 w3-padding">
+
+                    <h1 class="w3-xxxlarge w3-margin-bottom w3-hide-small" style="font-weight: 600">Areas of
+                        Practice</h1>
+                    <h1 class="w3-xxlarge w3-margin-bottom w3-hide-large w3-hide-medium" style="font-weight: 600">Areas
+                        of Practice</h1>
+                    <div class="columns is-multiline w3-padding-32">
+                        {% for area_of_practice in areas_of_practice %}
+                            <div class="column is-12 w3-bottombar {% if forloop.counter0 == 0 %}w3-topbar{% endif %}">
+                                <div class="columns is-multiline">
+                                    <div class="column is-12">
+                                        <br>
+                                        <div class="w3-display-container w3-padding-large"
+                                             style="height: 100%;">
+                                            <h2 class="w3-display-left w3-hide-small w3-xxlarge">{{ area_of_practice.title }}</h2>
+                                            <h2 class="w3-display-left w3-hide-large w3-hide-medium w3-xlarge">{{ area_of_practice.title }}</h2>
+                                        </div>
+                                    </div>
+                                    <div class="column is-12">
+                                        <p class="w3-xlarge w3-padding-large">
+                                            {% for text in area_of_practice.texts %}
+                                                {{ text }}
+                                                <br>
+                                            {% endfor %}
+
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero is-medium is-patel-yellow">
+        <div class="hero-body">
+            <div class="columns">
+                <div class="column is-offset-1 is-8 w3-padding">
+                    <h1 class="w3-jumbo w3-margin-bottom">
+                        “We must all obey the great law of change. It is the most powerful law of nature.”
+                    </h1>
+                    <p class="w3-xlarge">– Edmund Burke</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero is-medium is-dark">
+        <div class="hero-body">
+            <div class="columns">
+                <div class="column is-offset-1 is-6 w3-padding">
+                    <h1 class="w3-xxxlarge w3-margin-bottom" style="font-weight: 600">Get in touch</h1>
+                    <p class="w3-xlarge">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum eum itaque rem. Aliquam
+                        commodi debitis dolorum ducimus excepturi ipsam magni nihil odio sapiente? Consectetur culpa
+                        dolorum error perspiciatis porro. Officiis!
+                    </p>
+                    <br>
+                    <a class="w3-btn w3-border w3-padding-large w3-xlarge is-dark">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero is-small is-patel-yellow">
+        <div class="hero-body">
+
+        </div>
+    </div>
+{% endblock %}

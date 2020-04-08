@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block page_title %}{% endblock %}{% block title %}{% endblock %} &bull; Rhema Law</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.17/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+    <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        @font-face {
+            font-family: 'CircularPro-Book';
+            src: url('{% static 'fonts/CircularPro/CircularPro-Book.otf' %}') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'MabryLightPro';
+            src: url('{% static 'fonts/MabryLightPro/mabry-light-pro.ttf' %}') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'OrpheusPro';
+            src: url('{% static 'fonts/OrpheusPro/Canada-Type-Orpheus-Pro.otf' %}') format('truetype');
+        }
+
+        *, div, body, p {
+            font-family: "MabryLightPro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        !important;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4, h5, h6, strong, .is-bold, .w3-btn {
+            font-family: OrpheusPro, "CircularPro-Book", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        !important;
+        }
+
+    </style>
+    {% block extra_head %}
+
+    {% endblock %}
+</head>
+<body style="width: 100%">
+
+<div id="app" class="w3-hide w3-animate-opacity trans-400">
+    <v-app-bar class="is-dark">
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"
+                            class="w3-hide-medium w3-hide-large w3-hide"></v-app-bar-nav-icon>
+        <a href="/">
+            <strong class="is-bold w3-xlarge">RhemaLaw</strong>
+        </a>
+        <v-spacer></v-spacer>
+        <div class="w3-hide-small">
+
+            {% include 'frontend/partials/navigation.html' %}
+        </div>
+    </v-app-bar>
+    {% block content %}
+    {% endblock %}
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+{% block extra_body %}
+{% endblock %}
+<script>
+    let vueApp = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['[[', ']]'],
+        data() {
+            return {};
+        },
+        watch: {},
+        mounted: function () {
+            setTimeout(() => {
+                $('#app').removeClass('w3-hide');
+            }, 100);
+            setTimeout(() => {
+                $('#loading').addClass('w3-hide')
+            }, 200);
+        },
+        methods: {
+            goTo(url) {
+                window.location.href = url;
+            },
+        }
+    });
+</script>
+</body>
+</html>
