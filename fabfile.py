@@ -12,19 +12,19 @@ def prep():
 
 
 def run(args):
-    local(f'heroku run python manage.py {args} -a oxfordconsultants')
+    local(f'heroku run python manage.py {args} -a rhemalaw')
 
 
 def prod_mgr():
-    local('heroku run python manage.py migrate --app=oxfordconsultants')
+    local('heroku run python manage.py migrate --app=rhemalaw')
 
 
 def prod_tail():
-    local('heroku logs --tail --app=oxfordconsultants')
+    local('heroku logs --tail --app=rhemalaw')
 
 
 def prod_shell():
-    local('heroku run python manage.py shell_plus --app=oxfordconsultants')
+    local('heroku run python manage.py shell_plus --app=rhemalaw')
 
 
 def shell():
