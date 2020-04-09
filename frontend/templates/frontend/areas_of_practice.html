@@ -12,11 +12,18 @@
         img #path1 {
             fill-opacity: 0;
         }
+
+        .tabs.is-boxed li.is-active a {
+            background-color: #000;
+            border-color: #000;
+            color: #b2893d;
+            border-bottom-color: transparent !important;
+        }
     </style>
 {% endblock %}
 {% block content %}
     <div style="background: url('/static/images/{{ current_area.slug }}-min.jpg');background-position: center">
-        <section class="hero is-transparent is-large bgoverlay9">
+        <section class="hero is-transparent is-medium bgoverlay">
 
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -40,8 +47,8 @@
             </div>
         </section>
     </div>
-    <section class="hero is-small is-white" style="min-height: 100vh">
-        <div class="hero-body ">
+    <section class="hero is-small w3-black parallax" style="min-height: 100vh">
+        <div class="hero-body bgoverlay9">
             <div class="container w3-content fit-content">
                 <div class="w3-padding-large">
                     <p class="w3-xlarge">

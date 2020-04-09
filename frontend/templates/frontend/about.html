@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block content %}
-    <section class="hero is-medium " style="min-height: 100vh">
-        <div class="hero-body ">
+    <section class="hero is-medium w3-black parallax" style="min-height: 100vh">
+        <div class="hero-body bgoverlay9">
             <div class="container">
                 <div class="w3-padding-large w3-padding-32">
                     <h1 class="w3-xxxlarge">About us</h1>
@@ -40,9 +40,5 @@
             </div>
         </div>
     </section>
-    <div class="hero w3-black">
-        <div class="hero-body w3-content w3-container w3-center">
-            {% include 'frontend/partials/logo.html' %}
-        </div>
-    </div>
+
 {% endblock %}
