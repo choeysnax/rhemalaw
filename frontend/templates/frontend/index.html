@@ -3,15 +3,6 @@
 {% block page_title %}
     Welcome
 {% endblock %}
-{% block extra_head %}
-    <style>
-        .bgimg {
-            background-image: url('{% static 'images/girls.png'%}');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
-{% endblock %}
 {% block content %}
     <div class="hero is-large is-black w3-black"
          style='background: url("{% static 'images/rl.svg' %}") bottom;background-size: 2500px;'>
@@ -48,7 +39,7 @@
                        class="w3-btn w3-border w3-padding-large w3-xlarge is-dark w3-text-white w3-border-yellow">Learn
                         more</a>
                 </div>
-                <div class="column is-4 is-offset-1 w3-padding">
+                <div class="column is-4 is-offset-1 w3-padding w3-hide">
                     <h1 class="w3-xlarge">Contact us</h1>
                     <p class="w3-xlarge">
                         Ground Floor, Stanbic Heights
@@ -73,31 +64,28 @@
         <div class="hero-body">
             <div class="columns">
                 <div class="column is-offset-1 is-6 w3-padding">
-                    {% include 'frontend/partials/logo.html' %}
                     <h1 class="w3-xxxlarge w3-margin-bottom w3-hide-small" style="font-weight: 600">Areas of
                         Practice</h1>
                     <h1 class="w3-xxlarge w3-margin-bottom w3-hide-large w3-hide-medium" style="font-weight: 600">Areas
                         of Practice</h1>
                     <div class="columns is-multiline w3-padding-32">
-                        {% for area_of_practice in areas_of_practice %}
+                        {% for area in areas_of_practice %}
                             <div class="column is-12 w3-bottombar w3-border-yellow {% if forloop.counter0 == 0 %}w3-topbar{% endif %}">
                                 <div class="columns is-multiline">
                                     <div class="column is-12">
                                         <br>
                                         <div class="w3-display-container w3-padding-large"
                                              style="height: 100%;">
-                                            <h2 class="w3-display-left w3-hide-small w3-xxlarge">{{ area_of_practice.title }}</h2>
-                                            <h2 class="w3-display-left w3-hide-large w3-hide-medium w3-xlarge">{{ area_of_practice.title }}</h2>
+                                            <h2 class="w3-display-left w3-hide-small w3-xxlarge">{{ area.title }}</h2>
+                                            <h2 class="w3-display-left w3-hide-large w3-hide-medium w3-xlarge">{{ area.title }}</h2>
                                         </div>
                                     </div>
                                     <div class="column is-12">
-                                        <p class="w3-xlarge w3-padding-large">
-                                            {% for text in area_of_practice.texts %}
-                                                {{ text }}
-                                                <br>
-                                            {% endfor %}
-
-                                        </p>
+                                        <a href="{% url 'frontend:areas_of_practice' area.slug %}"
+                                           class="w3-xlarge w3-text-white w3-border-bottom w3-border-yellow">Learn
+                                            more &rightarrow;</a>
+                                        <br>
+                                        <br>
                                     </div>
                                 </div>
 
@@ -113,7 +101,7 @@
         <div class="hero-body">
             <div class="columns">
                 <div class="column is-offset-1 is-8 w3-padding">
-                    <h1 class="w3-jumbo w3-margin-bottom">
+                    <h1 class="w3-xxlarge w3-margin-bottom">
                         “We must all obey the great law of change. It is the most powerful law of nature.”
                     </h1>
                     <p class="w3-xlarge">– Edmund Burke</p>
@@ -127,19 +115,13 @@
                 <div class="column is-offset-1 is-6 w3-padding">
                     <h1 class="w3-xxxlarge w3-margin-bottom" style="font-weight: 600">Get in touch</h1>
                     <p class="w3-xlarge">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum eum itaque rem. Aliquam
-                        commodi debitis dolorum ducimus excepturi ipsam magni nihil odio sapiente? Consectetur culpa
-                        dolorum error perspiciatis porro. Officiis!
+                        We're love nothing more than to hear from you!
                     </p>
                     <br>
-                    <a class="w3-btn w3-border w3-padding-large w3-xlarge is-dark">Contact us</a>
+                    <a class="w3-btn w3-border w3-padding-large w3-xlarge is-dark w3-text-white w3-border-yellow"
+                       href="{% url 'frontend:contact' %}">Contact us</a>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="hero is-small is-patel-yellow">
-        <div class="hero-body">
-
         </div>
     </div>
 {% endblock %}

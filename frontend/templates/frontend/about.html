@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    <section class="hero is-medium is-patel-yellow" style="min-height: 100vh">
+    <section class="hero is-medium " style="min-height: 100vh">
         <div class="hero-body ">
             <div class="container">
-                <div class="bgoverlay w3-padding-large w3-padding-32">
+                <div class="w3-padding-large w3-padding-32">
                     <h1 class="w3-xxxlarge">About us</h1>
                     <br>
                     <p class="w3-xlarge">
@@ -36,17 +36,13 @@
                         and legal research, supervise closings, and draft a variety of legal documents including
                         contracts, resolutions and legal opinions.
                     </p>
-                    <br>
-                    <br>
-                    <p class="w3-xlarge">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad cupiditate dolorem eaque facilis
-                        magnam
-                        neque, praesentium quos soluta tenetur voluptas. Dolores fuga illum inventore ipsum minus
-                        officia
-                        quisquam voluptate voluptatum.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
+    <div class="hero w3-black">
+        <div class="hero-body w3-content w3-container w3-center">
+            {% include 'frontend/partials/logo.html' %}
+        </div>
+    </div>
 {% endblock %}

@@ -54,6 +54,10 @@
         .bgoverlay {
             background: rgba(0, 0, 0, 0.4);
         }
+
+        .bgoverlay9 {
+            background: rgba(0, 0, 0, 0.8);
+        }
     </style>
     {% block extra_head %}
 
@@ -86,6 +90,39 @@
     </div>
     {% block content %}
     {% endblock %}
+
+    <div id="footer" class="hero is-medium w3-black w3-border-top w3-border-yellow">
+        <div class="hero-body">
+
+            <div class="columns">
+
+                <div class="column is-offset-1 is-11 w3-padding">
+                    <div class="level is-mobile">
+                        <div class="level-left">
+                            <div class="level-item" style="margin-top: -5px">
+                                <img src="{% static 'images/rl.svg' %}" alt="" style="height: 40px">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="w3-xlarge">
+                        Ground Floor, Stanbic Heights
+                        <br>
+                        Plot 215 South Liberation Link,
+                        <br>
+                        Airport City
+                        <br>
+                        Accra, Ghana
+                        <br>
+                        <br>
+                        <a href="mailto:akuaa@rhemalawgh.com"
+                           class="w3-xlarge w3-border-bottom w3-border-white w3-text-white">akuaa@rhemalawgh.com</a>
+                        <br>
+                        +233 (0) 506 695 374
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </div>

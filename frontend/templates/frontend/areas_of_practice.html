@@ -3,47 +3,53 @@
 {% block page_title %}
     Areas of Practice
 {% endblock %}
+{% block extra_head %}
+    <style>
+        a.tab-link {
+            color: inherit;
+        }
 
+        img #path1 {
+            fill-opacity: 0;
+        }
+    </style>
+{% endblock %}
 {% block content %}
-    <section class="hero is-medium is-patel-yellow" style="min-height: 100vh">
+    <div style="background: url('/static/images/{{ current_area.slug }}-min.jpg');background-position: center">
+        <section class="hero is-transparent is-large bgoverlay9">
+
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <img src="{% static 'images/rl-transparent.svg' %}" alt="" style="height: 89px">
+
+                    <h1 class="w3-text-white w3-xxxlarge">
+                        {{ current_area.title }}
+                    </h1>
+                </div>
+            </div>
+            <div class="hero-foot w3-content w3-container">
+                <nav class="tabs is-boxed">
+                    <ul>
+                        {% for area in areas_of_practice %}
+                            <li class="{% if current_area.slug == area.slug %}is-active{% else %}w3-text-white{% endif %} trans-400 w3-animate-opacity">
+                                <a class="tab-link"
+                                   href="{% url 'frontend:areas_of_practice' area.slug %}">{{ area.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+    <section class="hero is-small is-white" style="min-height: 100vh">
         <div class="hero-body ">
-            <div class="container">
-                <div class="bgoverlay w3-padding-large w3-padding-32">
-                    <h1 class="w3-xxxlarge">Areas of Practice</h1>
-                    <br>
+            <div class="container w3-content fit-content">
+                <div class="w3-padding-large">
                     <p class="w3-xlarge">
-                        Rhema Law is a law firm based in Accra, Ghana, which operates a niche corporate and commercial
-                        law practice that advises local, external and multinational companies. We combine creative
-                        solutions with pragmatism and a friendly, sensitive approach to support individuals and
-                        businesses to resolve conflict, safeguard their futures, and maximize opportunities.
-                        <br>
-                        <br>
-                        <br>
-                        Because we appreciate the nuances of starting a business in a foreign country, we are positioned
-                        to provide hands-on practical advice to ensure our clients are well placed to do business in
-                        Ghana effectively. We offer business regulatory and compliance advisory services to both local
-                        and foreign clients to assist them establish their businesses, assist clients maintain
-                        regulatory compliance, provide company secretarial services, and advise and assist clients
-                        design appropriate corporate governance frameworks for their business needs.
-                        <br>
-                        <br>
-                        <br>
-                        Our depth and experience is peaked in the area of transactional law and in this regard, Rhema
-                        Law lawyers are experienced in the strategic and tactical issues that arise in transactions.
-                        With clients in the financial, insurance, telecommunications, manufacturing and oil and gas
-                        industries, we advise on, negotiate and structure transactions, draft transactional documents,
-                        counsel clients, prepare and submit materials to regulatory authorities, perform due diligence
-                        and legal research, supervise closings, and draft a variety of legal documents including
-                        contracts, resolutions and legal opinions.
-                    </p>
-                    <br>
-                    <br>
-                    <p class="w3-xlarge">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad cupiditate dolorem eaque facilis
-                        magnam
-                        neque, praesentium quos soluta tenetur voluptas. Dolores fuga illum inventore ipsum minus
-                        officia
-                        quisquam voluptate voluptatum.
+                        {% for text in current_area.texts %}
+                            {{ text }}
+                            <br>
+                            <br>
+                        {% endfor %}
                     </p>
                 </div>
             </div>
