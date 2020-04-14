@@ -4,55 +4,66 @@ areas_of_practice_list = [
     {
         'title': 'Commercial Law',
         'texts': [
-            '1. Mergers and acquisitions',
-            '2. Corporate and commercial contracts',
-            '3. Shareholders agreements',
-            '4. Partnership agreements',
-            '5. Joint ventures',
-            '6. Franchising agreements',
-            '7. Business restructuring',
-            '8. Start - ups.',
-            '9. Employment law issues.',
-            '10. Penetration into the energy and oil and gas sectors.',
-            '11. Liquidation.'
+            'Mergers and acquisitions',
+            'Corporate and commercial contracts',
+            'Shareholders agreements',
+            'Partnership agreements',
+            'Joint ventures',
+            'Franchising agreements',
+            'Business restructuring',
+            'Start-ups',
+            'Energy',
+            'Oil and Gas'
         ],
         'slug': 'commercial-law'
     },
     {
         'title': 'Employment Law',
         'texts': [
-            '1. Negotiation of terms of employment',
-            '2. Drafting of contracts of employment',
-            '3. Drafting of employee manuals',
-            '4. Negotiation and drafting of collective bargaining agreements',
-            '5. Severance',
-            '6. Representation at the Labour Commission',
+            'Negotiation of terms of employment',
+            'Drafting of contracts of employment',
+            'Drafting of employee manuals',
+            'Negotiation and drafting of collective bargaining agreements',
+            'Severance',
+            'Redundancies',
+            'Representation at the Labour Commission',
         ],
         'slug': 'employment-law'
     },
     {
         'title': 'Conveyancing',
         'texts': [
-            '1. Land sales and acquisition',
-            '2. Residential Conveyancing',
-            '3. Commercial Conveyancing',
-            '4. Landlord and Tenant'
+            'Land sales and acquisition',
+            'Residential Conveyancing',
+            'Commercial Conveyancing',
+            'Landlord and Tenant'
         ],
         'slug': 'conveyancing'
     },
     {
         'title': 'Wills and Probate',
         'texts': [
-            '1. Wills and estate planning',
-            '2. Probate and administration of estates',
-            '3. Vesting assents.'
+            'Wills and estate planning',
+            'Probate and administration of estates',
+            'Vesting assents',
+            'Letters of administration'
         ],
         'slug': 'wills-and-probate'
     },
     {
-        'title': 'Immigration',
+        'title': 'Other services',
         'texts': [
-            'We advise businesses and individuals on all aspects of Ghanaian and UK immigration law.'
+            'Entities Registration',
+            'Company Secretarial',
+            'Tax Advisory & Allied Services',
+            'Corporate Governance',
+            'Compliance',
+            'Immigration',
+            'Shelf companies',
+            'Liquidation',
+            'Translation',
+            'Nominee Services',
+            'Human Resources',
         ],
         'slug': 'immigration'
 

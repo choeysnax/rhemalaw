@@ -1,7 +1,7 @@
 {% extends 'frontend/base.html' %}
 {% load static %}
 {% block page_title %}
-    Areas of Practice
+    {{ current_area.title }} | Areas of Practice
 {% endblock %}
 {% block extra_head %}
     <style>
@@ -51,13 +51,34 @@
         <div class="hero-body bgoverlay9">
             <div class="container w3-content fit-content">
                 <div class="w3-padding-large">
-                    <p class="w3-xlarge">
-                        {% for text in current_area.texts %}
-                            {{ text }}
-                            <br>
-                            <br>
-                        {% endfor %}
-                    </p>
+                    {% if current_area.slug == 'commercial-law' or current_area.slug == 'immigration' %}
+                        <div class="w3-content" style="max-width: 900px;margin: auto">
+
+                            {% if current_area.slug == 'immigration' %}
+                                <p class="w3-center w3-xlarge w3-margin-bottom">The following services are provided by
+                                    our sister
+                                    company Oxford Consultants
+                                </p>
+                                <br>
+                            {% endif %}
+                            <div class="columns is-multiline is-mobile">
+                                {% for text in current_area.texts %}
+                                    <div class="column is-6-mobile is-6-desktop is-6-tablet w3-padding-16 w3-xlarge">
+                                        {{ text }}
+                                        <br>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <p class="w3-xlarge">
+                            {% for text in current_area.texts %}
+                                {{ text }}
+                                <br>
+                                <br>
+                            {% endfor %}
+                        </p>
+                    {% endif %}
                 </div>
             </div>
         </div>
