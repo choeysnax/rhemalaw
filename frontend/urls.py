@@ -11,6 +11,6 @@ urlpatterns = [
     path('contact', views.contact_view, name='contact'),
     path('areas-of-practice', views.areas_of_practice, name='areas_of_practice'),
     path('areas-of-practice/<slug:slug>', views.areas_of_practice, name='areas_of_practice'),
-    path('team', views.rhema_team, name='rhema_team'),
+    path('our-team', views.rhema_team, name='rhema_team'),
 
 ]
