@@ -53,19 +53,52 @@ areas_of_practice_list = [
     {
         'title': 'Other services',
         'texts': [
-            'Entities Registration',
-            'Company Secretarial',
-            'Tax Advisory & Allied Services',
-            'Corporate Governance',
-            'Compliance',
-            'Immigration',
-            'Shelf companies',
-            'Liquidation',
-            'Translation',
-            'Nominee Services',
-            'Human Resources',
+            {
+                'text': 'Entities Registration',
+                'link': 'Entities Registration'
+            },
+            {
+                'text': 'Company Secretarial',
+                'link': ''
+            },
+            {
+                'text': 'Tax Advisory & Allied Services',
+                'link': ''
+            },
+            {
+                'text': 'Corporate Governance',
+                'link': ''
+            },
+            {
+                'text': 'Compliance',
+                'link': ''
+            },
+            {
+                'text': 'Immigration',
+                'link': ''
+            },
+            {
+                'text': 'Shelf companies',
+                'link': ''
+            },
+            {
+                'text': 'Liquidation',
+                'link': ''
+            },
+            {
+                'text': 'Translation',
+                'link': ''
+            },
+            {
+                'text': 'Nominee Services',
+                'link': ''
+            },
+            {
+                'text': 'Human Resources',
+                'link': ''
+            },
         ],
-        'slug': 'immigration'
+        'slug': 'other-services'
 
     },
 ]

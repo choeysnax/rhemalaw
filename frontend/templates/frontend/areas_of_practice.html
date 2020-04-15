@@ -34,8 +34,8 @@
                     </h1>
                 </div>
             </div>
-            <div class="hero-foot w3-content w3-container">
-                <nav class="tabs is-boxed">
+            <div class="hero-foot w3-container">
+                <nav class="tabs is-boxed w3-content ">
                     <ul>
                         {% for area in areas_of_practice %}
                             <li class="{% if current_area.slug == area.slug %}is-active{% else %}w3-text-white{% endif %} trans-400 w3-animate-opacity">
@@ -47,25 +47,37 @@
             </div>
         </section>
     </div>
-    <section class="hero is-small w3-black parallax" style="min-height: 100vh">
+    <section class="hero is-small w3-black parallax" style="background-position: bottom">
         <div class="hero-body bgoverlay9">
             <div class="container w3-content fit-content">
                 <div class="w3-padding-large">
-                    {% if current_area.slug == 'commercial-law' or current_area.slug == 'immigration' %}
-                        <div class="w3-content" style="max-width: 900px;margin: auto">
+                    {% if current_area.slug == 'commercial-law' or current_area.slug == 'other-services' %}
+                        {% if current_area.slug == 'other-services' %}
+                            <strong class="w3-xlarge w3-margin-bottom w3-text-white w3-border-botto">These services are
+                                provided by
+                                our sister
+                                company
+                                <br class="w3-hide-medium w3-hide-large">
+                                <a href="" class="w3-text-yellow w3-xlarge w3-border-bottom w3-border-yellow is-bold">Oxford
+                                    Consultants</a>
+                            </strong>
+                            <br>
+                            <br>
+                            <br>
+                        {% endif %}
+                        <div class="w3-content" style="max-width: 700px;margin: auto">
 
-                            {% if current_area.slug == 'immigration' %}
-                                <p class="w3-center w3-xlarge w3-margin-bottom">The following services are provided by
-                                    our sister
-                                    company Oxford Consultants
-                                </p>
-                                <br>
-                            {% endif %}
                             <div class="columns is-multiline is-mobile">
                                 {% for text in current_area.texts %}
-                                    <div class="column is-6-mobile is-6-desktop is-6-tablet w3-padding-16 w3-xlarge">
-                                        {{ text }}
+                                    <div class="column is-12-mobile is-6-desktop is-6-tablet w3-padding-16 w3-xlarge">
+                                        {{ text.text|default:text }}
                                         <br>
+                                        {% if current_area.slug == 'other-services' %}
+                                            <a href="" class="w3-text-white w3-border-bottom w3-border-yellow">Learn
+                                                more
+                                                <span style="padding: 5px">&nearrow;</span>
+                                            </a>
+                                        {% endif %}
                                     </div>
                                 {% endfor %}
                             </div>

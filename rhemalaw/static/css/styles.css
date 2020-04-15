@@ -34,6 +34,10 @@
 
 }
 
+.w3-text-yellow {
+    color: #b2893d !important;
+}
+
 .min100vh {
     min-height: 100vh
 }
