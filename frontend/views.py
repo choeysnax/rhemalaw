@@ -137,3 +137,7 @@ def areas_of_practice(request, slug=None):
 
 def rhema_team(request):
     return render(request, 'frontend/rhema_team.html')
+
+
+def insights_view(request):
+    return render(request, 'frontend/insights.html')

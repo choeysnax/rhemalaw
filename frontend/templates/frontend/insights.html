@@ -1,0 +1,49 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block page_title %}
+    Insights
+{% endblock %}
+<style>
+    .v {
+        color: red;
+    }
+</style>
+
+{% block content %}
+    <section class="hero is-medium w3-black parallax" style="min-height: 100vh">
+        <div class="hero-body bgoverlay">
+            <div class="container ">
+                <div class="w3-padding-large w3-padding-16">
+                    <h1 class="w3-xxxlarge">Insights</h1>
+                    <br>
+                    <div class="w3-xlarge columns is-multiline">
+                        {% for foo in 'abcdec' %}
+                            <div class=" column is-4">
+                                <a href="">
+
+                                    <div class="card w3-bottombar w3-rightbar w3-hover-border-yellow w3-border-gray trans-400">
+                                        <div class="card-content">
+                                            <strong>Coronavirus 'Great Lockdown' will shrink global economy by 3% in
+                                                2020 -IMF</strong>
+                                            <p class="w3-padding-16">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci
+                                                atque
+                                                reiciendis
+                                                rem
+                                                repellendus saepe, temporibus totam ullam unde voluptatem? Est.
+                                            </p>
+                                            <v-chip class="w3-yellow">
+                                                Global news
+                                            </v-chip>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

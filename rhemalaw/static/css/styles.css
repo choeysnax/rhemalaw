@@ -31,13 +31,21 @@
 
 .w3-yellow {
     background-color: #b2893d !important;
-
+    color: #fff !important;
 }
 
 .w3-text-yellow {
     color: #b2893d !important;
 }
 
+.w3-hover-border-yellow:hover {
+    border-color: #b2893d !important;
+}
+
 .min100vh {
     min-height: 100vh
+}
+
+.has-cursor-pointer {
+    cursor: pointer;
 }
