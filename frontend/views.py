@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from frontend.models import Insight
+
 areas_of_practice_list = [
     {
         'title': 'Commercial Law',
@@ -140,4 +142,7 @@ def rhema_team(request):
 
 
 def insights_view(request):
-    return render(request, 'frontend/insights.html')
+    context = {
+        'insights': Insight.objects.filter(is_active=True)
+    }
+    return render(request, 'frontend/insights.html', context)
