@@ -198,4 +198,4 @@ if ENVIRONMENT != 'local':
 
 USER_AGENTS_CACHE = None
 
-OXFORD_HOST = 'https://oxfordconsultants.herokuapp.com'
+OXFORD_HOST = 'https://oxfordconsultants.herokuapp.com/en'
