@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="hero-foot w3-container">
-                <nav class="tabs is-boxed w3-content">
+                <nav class="tabs is-boxed w3-auto" style="">
                     <ul>
                         {% for area in areas_of_practice %}
                             <li class="{% if current_area.slug == area.slug %}is-active{% else %}w3-text-white{% endif %} trans-400 w3-animate-opacity">
@@ -73,7 +73,8 @@
                                         {{ text.text|default:text }}
                                         <br>
                                         {% if current_area.slug == 'other-services' %}
-                                            <a href="" class="w3-text-white w3-border-bottom w3-border-yellow">Learn
+                                            <a href="{{ text.link }}" target="_blank"
+                                               class="w3-text-white w3-border-bottom w3-border-yellow">Learn
                                                 more
                                                 <span style="padding: 5px">&nearrow;</span>
                                             </a>

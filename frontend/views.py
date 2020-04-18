@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.conf import settings
 from frontend.models import Insight
 
 areas_of_practice_list = [
@@ -57,47 +57,47 @@ areas_of_practice_list = [
         'texts': [
             {
                 'text': 'Entities Registration',
-                'link': 'Entities Registration'
+                'link': f'{settings.OXFORD_HOST}/services/entities-registration'
             },
             {
                 'text': 'Company Secretarial',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/company-secretarial'
             },
             {
                 'text': 'Tax Advisory & Allied Services',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/tax-advisory-allied-services'
             },
             {
                 'text': 'Corporate Governance',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/corporate-governance'
             },
             {
                 'text': 'Compliance',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/compliance'
             },
             {
                 'text': 'Immigration',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/immigration'
             },
             {
                 'text': 'Shelf companies',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/shelf-companies'
             },
             {
                 'text': 'Liquidation',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/liquidation'
             },
             {
                 'text': 'Translation',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/translation'
             },
             {
                 'text': 'Nominee Services',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/nominee-services'
             },
             {
                 'text': 'Human Resources',
-                'link': ''
+                'link': f'{settings.OXFORD_HOST}/services/human-resources'
             },
         ],
         'slug': 'other-services'

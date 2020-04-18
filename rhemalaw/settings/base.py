@@ -197,3 +197,5 @@ if ENVIRONMENT != 'local':
     X_FRAME_OPTIONS = 'DENY'
 
 USER_AGENTS_CACHE = None
+
+OXFORD_HOST = 'https://oxfordconsultants.herokuapp.com'
