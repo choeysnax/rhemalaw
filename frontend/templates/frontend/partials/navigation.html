@@ -1,17 +1,22 @@
-<v-btn class="w3-large w3-text-white" style="text-transform: unset" text href="{% url 'frontend:about' %}">
+{% load frontend_extra %}
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white {{ request.path|includes:'about' }}"
+       style="text-transform: unset" text href="{% url 'frontend:about' %}">
     About us
 </v-btn>
-<v-btn class="w3-large w3-text-white" style="text-transform: unset" text href="{% url 'frontend:areas_of_practice' %}">
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white {{ request.path|includes:'areas-of-practice' }}"
+       style="text-transform: unset" text href="{% url 'frontend:areas_of_practice' %}">
     Areas of Practice
 </v-btn>
-<v-btn class="w3-large w3-text-white" style="text-transform: unset" text href="{% url 'frontend:rhema_team' %}">
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white {{ request.path|includes:'our-team' }}"
+       style="text-transform: unset" text href="{% url 'frontend:rhema_team' %}">
     Our Team
 </v-btn>
-<v-btn class="w3-large w3-text-white" style="text-transform: unset" text href="{% url 'frontend:insights' %}">
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white {{ request.path|includes:'insights' }}"
+       style="text-transform: unset" text href="{% url 'frontend:insights' %}">
     Insights
 </v-btn>
-<v-btn class="w3-large w3-text-white" style="text-transform: unset" text href="{% url 'frontend:contact' %}">
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white {{ request.path|includes:'contact' }}"
+       style="text-transform: unset" text href="{% url 'frontend:contact' %}">
     Contact us
 </v-btn>
-
 
