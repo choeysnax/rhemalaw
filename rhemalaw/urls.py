@@ -20,8 +20,6 @@ urlpatterns = [
     # Wagtail's page serving mechanism. This should be the last pattern in
     # the list:
     path('', include('frontend.urls')),
-    path('en', include('frontend.urls')),
-    path('fr/', include('frontend.urls')),
     # url(r'', include(wagtail_urls)),
 
     # Alternatively, if you want Wagtail pages to be served from a subpath
