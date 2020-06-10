@@ -22,6 +22,18 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 ENVIRONMENT = config('ENVIRONMENT', default='local')
 
+if ENVIRONMENT != 'local':
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    sentry_sdk.init(
+        dsn="https://9c294c05119e43a39a96aea4ae4406ff@o224520.ingest.sentry.io/5271347",
+        integrations=[DjangoIntegration()],
+
+        # If you wish to associate users to errors (assuming you are using
+        # django.contrib.auth) you may enable sending PII data.
+        send_default_pii=True
+    )
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
