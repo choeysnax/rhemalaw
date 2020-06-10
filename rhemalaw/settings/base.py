@@ -29,9 +29,6 @@ if ENVIRONMENT != 'local':
     sentry_sdk.init(
         dsn="https://9c294c05119e43a39a96aea4ae4406ff@o224520.ingest.sentry.io/5271347",
         integrations=[DjangoIntegration()],
-
-        # If you wish to associate users to errors (assuming you are using
-        # django.contrib.auth) you may enable sending PII data.
         send_default_pii=True
     )
 # Quick-start development settings - unsuitable for production
@@ -210,4 +207,4 @@ if ENVIRONMENT != 'local':
 
 USER_AGENTS_CACHE = None
 
-OXFORD_HOST = 'https://oxfordconsultants.herokuapp.com/en'
+OXFORD_HOST = 'https://www.oxfordconsultantsgh.com/en'
