@@ -1,4 +1,4 @@
-{% load static %}
+{% load static wagtailimages_tags wagtailcore_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,6 +137,14 @@
         </div>
 
     </div>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="w3-yellow w3-padding w3-center w3-large">
+                <strong class="w3-text-white w3-large">{{ message }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
     {% block content %}
     {% endblock %}
 
@@ -168,6 +176,17 @@
                         <br>
                         +233 (0) 506 695 374
                     </p>
+                    <br>
+                    <br>
+                    <a href="{% slugurl 'privacy-policy' %}"
+                       class="w3-xlarge w3-text-white w3-border-yellow w3-border-bottom">Privacy Policy</a>
+                    &nbsp;
+                    <a href="{% url 'sitemap' %}" class="w3-xlarge w3-text-white w3-border-yellow w3-border-bottom">Sitemap</a>
+                    <br>
+                    <br>
+                    <span class="w3-xlarge">
+                    &copy; 2020 - {{ current_year }} Rhema Law. All rights reserved
+                    </span>
                 </div>
             </div>
         </div>

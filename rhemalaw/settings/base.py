@@ -42,6 +42,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [
     s.strip() for s in v.split(',')], default='*')
 
 INSTALLED_APPS = [
+    'home',
     'frontend',
     'search',
 
@@ -71,7 +72,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-
+    'django.contrib.sitemaps',
 ]
 
 SITE_ID = 1
@@ -103,6 +104,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'rhemalaw.context_processors.site'
             ],
         },
     },
@@ -208,3 +210,13 @@ if ENVIRONMENT != 'local':
 USER_AGENTS_CACHE = None
 
 OXFORD_HOST = 'https://www.oxfordconsultantsgh.com/en'
+
+MAILGUN_API_KEY = config('MAILGUN_API_KEY', default='MAILGUN_API_KEY')
+MAILGUN_API_BASE_URL = config('MAILGUN_API_BASE_URL', default='MAILGUN_API_BASE_URL')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = config('EMAIL_HOST', default='EMAIL_HOST')
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True

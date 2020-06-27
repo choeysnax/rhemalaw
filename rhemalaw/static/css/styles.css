@@ -49,3 +49,8 @@
 .has-cursor-pointer {
     cursor: pointer;
 }
+
+p {
+    font-size: inherit;
+    margin-bottom: 20px;
+}

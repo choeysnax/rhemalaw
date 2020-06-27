@@ -1,6 +1,9 @@
-from django.shortcuts import render
 from django.conf import settings
-from frontend.models import Insight
+from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import render
+
+from frontend.forms import ContactForm
 
 areas_of_practice_list = [
     {
@@ -109,17 +112,34 @@ areas_of_practice_list = [
 # Create your views here.
 def index_view(request):
     context = {
+        'index': True,
         'areas_of_practice': areas_of_practice_list
     }
     return render(request, 'frontend/index.html', context)
 
 
-def about_view(request):
-    return render(request, 'frontend/about.html')
-
-
 def contact_view(request):
-    return render(request, 'frontend/contact.html')
+    if request.method == 'POST':
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            send_mail(
+                f"[ContactPage] {contact_form.cleaned_data.get('subject')}",
+                f"Name: {contact_form.cleaned_data.get('name')}\n"
+                f"Email: {contact_form.cleaned_data.get('email')}\n"
+                f"Phone: {contact_form.cleaned_data.get('phone')}\n\n"
+                f"Message: {contact_form.cleaned_data.get('message')}\n",
+                'contact-us-page@rhemalawgh.com',
+                ['cpkthompson@gmail.com'],
+                fail_silently=False,
+            )
+            messages.success(request, 'Message has successfully been submitted')
+        pass
+    else:
+        contact_form = ContactForm()
+    context = {
+        'contact_form': contact_form
+    }
+    return render(request, 'frontend/contact.html', context)
 
 
 def areas_of_practice(request, slug=None):
@@ -134,15 +154,4 @@ def areas_of_practice(request, slug=None):
         'areas_of_practice': areas_of_practice_list,
         'current_area': current_area
     }
-    return render(request, 'frontend/areas_of_practice.html', context)
-
-
-def rhema_team(request):
-    return render(request, 'frontend/rhema_team.html')
-
-
-def insights_view(request):
-    context = {
-        'insights': Insight.objects.filter(is_active=True)
-    }
-    return render(request, 'frontend/insights.html', context)
+    return render(request, 'home/areas_of_practice_page.html', context)

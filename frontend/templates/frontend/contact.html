@@ -10,6 +10,97 @@
     </script>
 {% endblock %}
 {% block content %}
+    <section class="hero is-medium is-black bg-service">
+        <div class="hero-body ">
+            <div class="container">
+                <div class="w3-padding-large w3-padding-32" style="max-width: 1000px;">
+                    <form class="w3-xlarge" method="post">
+                        {% csrf_token %}
+                        <h1 class="w3-xxxlarge">Contact us</h1>
+                        <br>
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field">
+                                    <label class="label w3-text-white w3-large">From *</label>
+                                    <p class="control is-expanded has-icons-left">
+                                        <input class="input" type="text" placeholder="Name" name="name" required>
+                                        <span class="icon is-small is-left">
+                                          <i class="fas fa-user"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <label class="label w3-text-white w3-large">Email *</label>
+                                    <p class="control is-expanded has-icons-left">
+                                        <input class="input is-success" type="email" placeholder="Email" name="email"
+                                               required>
+                                        <span class="icon is-small is-left">
+                                          <i class="fas fa-envelope"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field is-expanded">
+                                    <label class="label w3-text-white w3-large">Phone</label>
+                                    <div class="field has-addons">
+                                        <p class="control is-expanded has-icons-left">
+                                            <input name="phone" class="input" type="tel"
+                                                   placeholder="Your phone number">
+                                            <span class="icon is-small is-left">
+                                              <i class="fas fa-phone-alt"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="label w3-text-white w3-large">Subject *</label>
+                                        <input name="subject" class="input" type="text"
+                                               placeholder="e.g. Inquiries, Opportunity, etc" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
+
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="label w3-text-white w3-large">Message *</label>
+                                        <textarea name="message" class="textarea"
+                                                  placeholder="Explain how we can help you" required>
+
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-white" type="submit">
+                                            Send message
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3875.324557090543!2d-0.1841226816907117!3d5.59893244059772!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xba97f593c0664741!2sStanbic%20Bank%20-%20Heights%20Branch!5e0!3m2!1sen!2sgh!4v1585839676240!5m2!1sen!2sgh"
             width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
             tabindex="0"></iframe>
