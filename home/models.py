@@ -1,9 +1,11 @@
 from django.db import models
-from wagtail.admin.edit_handlers import FieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.contrib.routable_page.models import RoutablePageMixin
-from wagtail.core.fields import RichTextField
+from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Page
 from wagtail.snippets.models import register_snippet
+
+from home.blocks import BaseStreamBlock
 
 
 class HomePage(Page):
@@ -41,9 +43,11 @@ class TeamPage(Page):
 
 
 class StandardPage(Page):
-    body = RichTextField()
+    body = StreamField(
+        BaseStreamBlock(), verbose_name="Page body", blank=True
+    )
     content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
+        StreamFieldPanel('body'),
     ]
 
 
