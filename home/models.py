@@ -91,5 +91,5 @@ class InsightIndexPage(RoutablePageMixin, Page):
     def get_context(self, request, **kwargs):
         context = super(InsightIndexPage, self).get_context(request)
         context['insights'] = InsightPage.objects.descendant_of(self).live().order_by(
-            '-created')
+            '-date_published')
         return context
