@@ -23,10 +23,12 @@
                                 <a {% if insight.external_link %}target="_blank"{% endif %}
                                    href="
 
+
                                            {% if insight.external_link %}{{ insight.external_link }}{% else %}{% pageurl insight %}{% endif %}">
                                     <div class="card w3-bottombar w3-rightbar w3-hover-border-yellow w3-border-gray trans-400">
                                         <div class="card-content">
-                                            <strong class="w3-xlarge">{{ insight.title }} <span class="w3-text-yellow">&rightarrow;</span></strong>
+                                            <h3 class="w3-xxlarge w3-text-black">{{ insight.title }} <span
+                                                    class="w3-text-yellow">&rightarrow;</span></h3>
                                             <div class="w3-padding-16 w3-xlarge">
                                                 {{ insight.body|richtext|truncatechars_html:140 }}
                                             </div>
