@@ -1,0 +1,56 @@
+.fit-content {
+    max-width: fit-content;
+    margin: auto;
+}
+
+.navbar-item {
+    text-transform: uppercase;
+}
+
+.trans-400 {
+    transition: 400ms;
+}
+
+.is-patel-yellow {
+    background-color: #e0e0db;
+    color: black;
+}
+
+.is-dark {
+    background-color: #363636;
+    color: #fff;
+}
+
+.theme--dark.v-app-bar.v-toolbar.v-sheet {
+    background-color: #000;
+}
+
+.w3-border-yellow {
+    border-color: #b2893d !important;
+}
+
+.w3-yellow {
+    background-color: #b2893d !important;
+    color: #fff !important;
+}
+
+.w3-text-yellow {
+    color: #b2893d !important;
+}
+
+.w3-hover-border-yellow:hover {
+    border-color: #b2893d !important;
+}
+
+.min100vh {
+    min-height: 100vh
+}
+
+.has-cursor-pointer {
+    cursor: pointer;
+}
+
+p {
+    font-size: inherit;
+    margin-bottom: 20px;
+}

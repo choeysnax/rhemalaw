@@ -1,5 +1,4 @@
 {% extends 'frontend/base.html' %}
-{% load static wagtailimages_tags wagtailcore_tags %}
 {% load static %}
 {% block page_title %}
     Welcome
@@ -53,7 +52,7 @@
                         businesses to resolve conflict, safeguard their futures, and maximize opportunities.
                     </p>
                     <br>
-                    <a href="{% slugurl 'about' %}"
+                    <a href=""
                        class="w3-btn w3-border w3-padding-large w3-xlarge is-dark w3-text-white w3-border-yellow">Learn
                         more</a>
                 </div>
@@ -99,7 +98,7 @@
                                         </div>
                                     </div>
                                     <div class="column is-12">
-                                        <a href="{% url 'frontend:areas_of_practice' area.slug %}"
+                                        <a href="{% url 'frontend:areas-of-practice-tab' area.slug %}"
                                            class="w3-xlarge w3-text-white w3-border-bottom w3-border-yellow">Learn
                                             more &rightarrow;</a>
                                         <br>

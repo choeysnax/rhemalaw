@@ -109,7 +109,11 @@ areas_of_practice_list = [
 ]
 
 
-# Create your views here.
+def get_areas_of_practice_list():
+    for area in areas_of_practice_list:
+        yield area['slug']
+
+
 def index_view(request):
     context = {
         'index': True,
@@ -154,4 +158,17 @@ def areas_of_practice(request, slug=None):
         'areas_of_practice': areas_of_practice_list,
         'current_area': current_area
     }
-    return render(request, 'home/areas_of_practice_page.html', context)
+    return render(request, 'frontend/areas_of_practice.html', context)
+
+
+def about(request):
+    return render(request, 'frontend/about.html')
+
+
+def our_team(request):
+    return render(request, 'frontend/our_team.html')
+
+
+def insights(request):
+    insights = []
+    return render(request, 'frontend/insights.html', {'insights': insights})

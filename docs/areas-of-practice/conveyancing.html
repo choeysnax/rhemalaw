@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        
+            
+        
+        
+            
+                
+            
+        
+    </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.17/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+    <link rel="stylesheet" href="/static/css/w3.css">
+    <link rel="stylesheet" href="/static/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        @font-face {
+            font-family: 'CircularPro-Book';
+            src: url('/static/fonts/CircularPro/CircularPro-Book.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'BodoniStd-Book';
+            src: url('/static/fonts/Bodoni/BodoniStd-Book.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'MabryLightPro';
+            src: url('/static/fonts/MabryLightPro/mabry-light-pro.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'OrpheusPro';
+            src: url('/static/fonts/OrpheusPro/Canada-Type-Orpheus-Pro.otf') format('truetype');
+        }
+
+
+        *, div, body, p {
+            font-family: "MabryLightPro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+            font-size: 18px;
+        }
+
+        h1, h2, h3, h4, h5, h6, strong, .is-bold, .w3-btn {
+            font-family: OrpheusPro, "CircularPro-Book", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+        }
+
+        @font-face {
+            font-family: 'CooperPenny';
+            src: url('/static/fonts/CooperPenny/copper penny dtp.ttf') format('truetype');
+        }
+
+        .bodoni {
+            font-family: "BodoniStd-Book", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+        }
+
+        .cooper {
+            font-family: "CooperPenny", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+        }
+
+        .bgoverlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .bgoverlay-about {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .bgoverlay-team {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .bgoverlay1 {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .bgoverlay9 {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .parallax {
+            background: url("/static/images/rl-black.png") no-repeat fixed center;
+            background-size: 1000px;
+        }
+
+        .hero-parallax {
+            background: url("/static/images/rl-hero.png") no-repeat fixed center;
+            background-size: cover;
+        }
+    </style>
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicons.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicons.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicons.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicons.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicons.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicons.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicons.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicons.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicons.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="/static/images/favicons.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicons.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicons.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicons.ico/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicons.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicons.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#b2893d">
+    
+    <style>
+        a.tab-link {
+            color: inherit;
+        }
+
+        img #path1 {
+            fill-opacity: 0;
+        }
+
+        .tabs.is-boxed li.is-active a {
+            background-color: #000;
+            border-color: #000;
+            color: #b2893d;
+            border-bottom-color: transparent !important;
+        }
+    </style>
+
+</head>
+<body style="width: 100%">
+<div id="app" class="w3-hide w3-animate-opacity trans-400">
+    <div class="w3-bar w3-padding-24 w3-black w3-bottombar w3-border-yellow">
+        <a class="w3-bar-item" href="/">
+            <div class="level is-mobile">
+                <div class="level-item" style="margin-top: -5px">
+                    <img src="/static/images/rl.svg" alt="" style="height: 40px">
+                </div>
+                <div class="level-item">
+                    <span class="w3-xlarge is-uppercase bodoni w3-text-white">Rhema Law</span>
+                </div>
+            </div>
+        </a>
+        <div w3-bar-item class="w3-right w3-xlarge w3-margin-right w3-hide-medium w3-hide-large">
+
+            <v-btn text icon dark @click="toggle">
+                <i class="fas fa-bars"></i>
+            </v-btn>
+        </div>
+        <div class="w3-bar-item w3-right w3-hide-small w3-animate-opacity" id="navigation">
+            
+
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white "
+       style="text-transform: unset" text href="/">
+    Home
+</v-btn>
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white "
+       style="text-transform: unset" text href="/about">
+    About us
+</v-btn>
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white w3-yellow"
+       style="text-transform: unset" text href="/areas-of-practice/">
+    Areas of Practice
+</v-btn>
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white "
+       style="text-transform: unset" text href="/our-team">
+    Our Team
+</v-btn>
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white "
+       style="text-transform: unset" text href="/insights">
+    Insights
+</v-btn>
+<v-btn class="w3-large w3-border w3-border-black w3-hover-border-yellow trans-400 w3-text-white "
+       style="text-transform: unset" text href="/contact">
+    Contact us
+</v-btn>
+
+
+        </div>
+
+    </div>
+    
+
+    
+    <div style="background: url('/static/images/conveyancing-min.jpg');background-position: center;background-size: cover">
+        <section
+                class="hero is-transparent is-medium  bgoverlay ">
+
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    
+                        <img src="/static/images/rl-transparent.svg" alt="" style="height: 89px">
+
+                        <h1 class="w3-text-white w3-xxxlarge">
+                            Conveyancing
+                        </h1>
+                    
+                </div>
+            </div>
+            <div class="hero-foot w3-container">
+                <nav class="tabs is-boxed w3-auto" style="">
+                    <ul>
+                        
+                            <li class="w3-text-white trans-400 w3-animate-opacity">
+                                <a class="tab-link w3-xlarge"
+                                   href="/areas-of-practice/commercial-law">Commercial Law</a></li>
+                        
+                            <li class="w3-text-white trans-400 w3-animate-opacity">
+                                <a class="tab-link w3-xlarge"
+                                   href="/areas-of-practice/employment-law">Employment Law</a></li>
+                        
+                            <li class="is-active trans-400 w3-animate-opacity">
+                                <a class="tab-link w3-xlarge"
+                                   href="/areas-of-practice/conveyancing">Conveyancing</a></li>
+                        
+                            <li class="w3-text-white trans-400 w3-animate-opacity">
+                                <a class="tab-link w3-xlarge"
+                                   href="/areas-of-practice/wills-and-probate">Wills and Probate</a></li>
+                        
+                            <li class="w3-text-white trans-400 w3-animate-opacity">
+                                <a class="tab-link w3-xlarge"
+                                   href="/areas-of-practice/other-services">Other services</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+    <section class="hero is-small w3-black parallax" style="background-position: bottom">
+        <div class="hero-body bgoverlay9">
+            <div class="container w3-content fit-content">
+                <div class="w3-padding-large">
+                    
+                        <p class="w3-xlarge">
+                            
+                                Land sales and acquisition
+                                <br>
+                                <br>
+                            
+                                Residential Conveyancing
+                                <br>
+                                <br>
+                            
+                                Commercial Conveyancing
+                                <br>
+                                <br>
+                            
+                                Landlord and Tenant
+                                <br>
+                                <br>
+                            
+                        </p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="footer" class="hero is-medium w3-black w3-border-top w3-border-yellow">
+        <div class="hero-body">
+
+            <div class="columns">
+
+                <div class="column is-offset-1 is-11 w3-padding">
+                    <div class="level is-mobile">
+                        <div class="level-left">
+                            <div class="level-item" style="margin-top: -5px">
+                                <img src="/static/images/rl.svg" alt="" style="height: 40px">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="w3-xlarge">
+                        Ground Floor, Stanbic Heights
+                        <br>
+                        Plot 215 South Liberation Link,
+                        <br>
+                        Airport City
+                        <br>
+                        Accra, Ghana
+                        <br>
+                        <br>
+                        <a href="mailto:info@rhemalawgh.com"
+                           class="w3-xlarge w3-border-bottom w3-border-white w3-text-white">info@rhemalawgh.com</a>
+                        <br>
+                        +233 (0) 506 695 374
+                    </p>
+                    <br>
+                    <br>
+                    <a href=""
+                       class="w3-xlarge w3-text-white w3-border-yellow w3-border-bottom">Privacy Policy</a>
+                    &nbsp;
+                    <a href="" class="w3-xlarge w3-text-white w3-border-yellow w3-border-bottom">Sitemap</a>
+                    <br>
+                    <br>
+                    <span class="w3-xlarge">
+                    &copy; 2020 -  Rhema Law. All rights reserved
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+
+<script>
+
+    let vueApp = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['[[', ']]'],
+        data() {
+            return {};
+        },
+        watch: {},
+        mounted: function () {
+            setTimeout(() => {
+                $('#app').removeClass('w3-hide');
+            }, 100);
+            setTimeout(() => {
+                $('#loading').addClass('w3-hide')
+            }, 200);
+        },
+        methods: {
+            goTo(url) {
+                window.location.href = url;
+            },
+            toggle() {
+                $('#navigation').toggleClass('w3-hide-small')
+            }
+        }
+    });
+</script>
+</body>
+</html>

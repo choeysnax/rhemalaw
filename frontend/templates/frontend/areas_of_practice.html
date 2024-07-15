@@ -1,0 +1,113 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block page_title %}
+    {{ current_area.title }} | Areas of Practice
+{% endblock %}
+{% block extra_head %}
+    <style>
+        a.tab-link {
+            color: inherit;
+        }
+
+        img #path1 {
+            fill-opacity: 0;
+        }
+
+        .tabs.is-boxed li.is-active a {
+            background-color: #000;
+            border-color: #000;
+            color: #b2893d;
+            border-bottom-color: transparent !important;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div style="background: url('/static/images/{{ current_area.slug }}-min.jpg');background-position: center;background-size: cover">
+        <section
+                class="hero is-transparent is-medium  bgoverlay {% if current_area.slug == 'other-services' %}is-white{% endif %}">
+
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    {% if current_area.slug == 'other-services' %}
+                        <div class="logooverlay">
+                            <img src="{% static 'images/oc.svg' %}" alt="" style="height: 100px">
+                            <h1 class="w3-xxxlarge w3-text-black">
+                                OXFORD
+                            </h1>
+                            <h1 class="w3-text-black" style="margin-top: -27px;font-size: 28px">
+                                CONSULTANTS
+                            </h1>
+                        </div>
+                    {% else %}
+                        <img src="{% static 'images/rl-transparent.svg' %}" alt="" style="height: 89px">
+
+                        <h1 class="w3-text-white w3-xxxlarge">
+                            {{ current_area.title }}
+                        </h1>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="hero-foot w3-container">
+                <nav class="tabs is-boxed w3-auto" style="">
+                    <ul>
+                        {% for area in areas_of_practice %}
+                            <li class="{% if current_area.slug == area.slug %}is-active{% else %}w3-text-white{% endif %} trans-400 w3-animate-opacity">
+                                <a class="tab-link w3-xlarge"
+                                   href="{% url 'frontend:areas-of-practice-tab' area.slug %}">{{ area.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+    <section class="hero is-small w3-black parallax" style="background-position: bottom">
+        <div class="hero-body bgoverlay9">
+            <div class="container w3-content fit-content">
+                <div class="w3-padding-large">
+                    {% if current_area.slug == 'commercial-law' or current_area.slug == 'other-services' %}
+                        {% if current_area.slug == 'other-services' %}
+                            <strong class="w3-xlarge w3-margin-bottom w3-text-white w3-border-botto">These services are
+                                provided by
+                                our sister
+                                company,
+                                <br class="w3-hide-medium w3-hide-large">
+                                <a href="https://oxfordconsultantsgh.com" target="_blank"
+                                   class="w3-text-yellow w3-xlarge w3-border-bottom w3-border-yellow is-bold">Oxford
+                                    Consultants</a>
+                            </strong>
+                            <br>
+                            <br>
+                            <br>
+                        {% endif %}
+                        <div class="w3-content" style="max-width: 700px;margin: auto">
+
+                            <div class="columns is-multiline is-mobile">
+                                {% for text in current_area.texts %}
+                                    <div class="column is-12-mobile is-6-desktop is-6-tablet w3-padding-16 w3-xlarge">
+                                        {{ text.text|default:text }}
+                                        <br>
+                                        {% if current_area.slug == 'other-services' %}
+                                            <a href="{{ text.link }}" target="_blank"
+                                               class="w3-text-white w3-border-bottom w3-border-yellow">Learn
+                                                more
+                                                <span style="padding: 5px">&nearrow;</span>
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <p class="w3-xlarge">
+                            {% for text in current_area.texts %}
+                                {{ text }}
+                                <br>
+                                <br>
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block page_title %}
+    Insights
+{% endblock %}
+<style>
+    .v {
+        color: red;
+    }
+</style>
+
+{% block content %}
+    <section class="hero is-medium w3-black parallax" style="min-height: 100vh">
+        <div class="hero-body bgoverlay">
+            <div class="container ">
+                <div class="w3-padding-large w3-padding-16">
+                    <h1 class="w3-xxxlarge">
+                        <a href="" class="w3-xxxlarge w3-text-yellow">&leftarrow;</a> Insights
+                    </h1>
+                    <br>
+                    <div class="w3-xlarge columns is-multiline">
+                        <div class="column is-8">
+                            <div class="card w3-bottombar w3-rightbar w3-hover-border-yellow w3-border-gray trans-400">
+                                <div class="card-content">
+                                    <strong class="w3-xlarge">
+                                        {{ page.title }}
+                                    </strong>
+                                    <div class="w3-padding-16 w3-xlarge">
+                                        {{ page.body|richtext|linebreaksbr }}
+                                    </div>
+                                    {% for tag in page.tags.all %}
+                                        <v-chip class="w3-{{ tag.color }}">
+                                            {{ tag.title }}
+                                        </v-chip>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
